@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 header {
@@ -21,12 +22,14 @@ header {
 main {
   margin-top: 2rem;
   width: 90%;
-  max-width: 600px;
-  text-align: center;
+  max-width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 h2 {
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .form-group {
@@ -37,6 +40,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 input, select {
@@ -46,12 +50,14 @@ input, select {
   border: none;
   color: white;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 table {
   width: 100%;
   margin-top: 1rem;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 th, td {
@@ -60,6 +66,7 @@ th, td {
   text-align: center;
   cursor: pointer;
   background-color: #121317;
+  font-size: 0.9rem;
 }
 
 th {
@@ -83,4 +90,120 @@ td:hover {
   border: 1px solid #444;
   border-radius: 5px;
   font-weight: bold;
+  word-break: break-word;
+}
+
+/* Estilos específicos para el mapa de Karnaugh */
+.karnaugh-map-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.karnaugh-table {
+  min-width: 300px;
+}
+
+.karnaugh-table td, .karnaugh-table th {
+  min-width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .karnaugh-table td, .karnaugh-table th {
+    min-width: 30px;
+    height: 30px;
+    font-size: 12px;
+    padding: 0.3rem;
+  }
+  
+  .output {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Ajustes para la tabla de cobertura en móviles */
+  .coverage-table-container {
+    font-size: 0.8rem;
+  }
+  
+  .coverage-table-container th, 
+  .coverage-table-container td {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Estilos para dispositivos muy pequeños */
+@media (max-width: 480px) {
+  main {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+  
+  header {
+    font-size: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  .karnaugh-table td, .karnaugh-table th {
+    min-width: 25px;
+    height: 25px;
+    font-size: 10px;
+  }
+  
+  /* Simplificar la visualización de grupos en móviles */
+  .groups-list {
+    font-size: 0.8rem;
+  }
+  
+  /* Botones responsivos */
+  button {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Estilos para la tabla de Quine-McCluskey */
+.quine-table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.quine-table table {
+  min-width: 600px;
+}
+
+/* Mejoras para la legibilidad en todos los dispositivos */
+.simplified-expression {
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+@media (min-width: 992px) {
+  main {
+    max-width: 900px;
+  }
+  
+  .karnaugh-table td, .karnaugh-table th {
+    min-width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
 }
